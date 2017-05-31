@@ -3,6 +3,8 @@ package com.example.hirono_mayuko.myapplication;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import java.util.List;
+
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.disposables.Disposables;
@@ -35,13 +37,20 @@ public class MainActivity extends AppCompatActivity {
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                        dashboard -> System.out.println(dashboard.getName()),
-                        Throwable::printStackTrace);
+                        dashboard -> {
+                            dashboard.collectQueryIds();
+                            queryWidgetData(dashboard.getQueryIds());
+                        },
+                        Throwable::printStackTrace,
+                        () -> {});
     }
 
     @Override
     protected void onDestroy(){
         super.onDestroy();
         d.dispose();
+    }
+
+    private void queryWidgetData(List<String> widgetIds){
     }
 }

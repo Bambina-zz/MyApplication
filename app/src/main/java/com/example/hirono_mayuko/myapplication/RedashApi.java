@@ -14,4 +14,7 @@ public interface RedashApi {
     @GET("/api/dashboards/{dashboard}")
     Observable<Dashboard> getDashboard(@Path("dashboard") String dashboard, @Query("api_key") String apiKey);
 
+    @GET("/api/queries/{queryId}/results.json")
+    Observable<Widget> getQueryData(@Path("queryId") String queryId, @Query("api_key") String apiKey);
+
 }
