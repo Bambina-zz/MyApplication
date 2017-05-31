@@ -1,2 +1,2 @@
-learning...
-(Retrofit)[http://square.github.io/retrofit/] & (OkHttp)[http://square.github.io/okhttp/] & (RxJava2)[https://github.com/ReactiveX/RxJava]
+learning...<br>
+[Retrofit](http://square.github.io/retrofit/) &amp; [OkHttp](http://square.github.io/okhttp/) &amp; [RxJava2](https://github.com/ReactiveX/RxJava) :cat:
